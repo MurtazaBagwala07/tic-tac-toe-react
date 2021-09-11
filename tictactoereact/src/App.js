@@ -8,9 +8,11 @@ function App() {
 
   const onSquareClicked=(index)=>{
     let strings = Array.from(gameState);
-    strings[index] = xTurn?"X":"O";
+    if(strings[index]===""){
+      strings[index] = xTurn?"X":"O";
     updateGameState(strings);
     updateXTurn(!xTurn);
+    }
   }
 
   const clearGame=()=>{
