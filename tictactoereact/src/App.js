@@ -5,6 +5,9 @@ const initialState = ["","","","","","","","",""]
 function App() {
   const [gameState,updateGameState] =useState(initialState);
   const [xTurn,updateXTurn] =useState(false)
+  const [pOneScore,updatePOneScore]=useState(0);
+  const [pTwoScore,updatePTwoScore] = useState(0);
+  
 
   const onSquareClicked=(index)=>{
     let strings = Array.from(gameState);
@@ -22,6 +25,13 @@ function App() {
   useEffect(()=>{
     let winner = checkWinner();
     if (winner) {
+        if(winner==="X"){
+          updatePTwoScore(pTwoScore+1);
+        }
+        if(winner==="O")
+        {
+          updatePOneScore(pOneScore+1)
+        }
         clearGame();
         alert(`Ta da ! ${winner} won the Game !`)
     }
@@ -51,7 +61,8 @@ function App() {
   return (
     <div className="app-header">
       <p className="heading-text">React Tic Tac Toe</p>
-
+    <span>Player 1</span><span>{pOneScore}</span><br/>
+    <span>Player 2</span><span>{pTwoScore}</span><br/>
       <div className="row jc-center">
         <SquareComponent className="b-bottom-right" state={gameState[0]} onClick={()=>onSquareClicked(0)}/>
         <SquareComponent className="b-bottom-right" state={gameState[1]} onClick={()=>onSquareClicked(1)}/>
