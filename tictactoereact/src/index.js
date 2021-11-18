@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import Home from './Home';
 
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/" element={<App/>}/>
+      <Route path="/" element={<Home/>}/>
     </Routes>
   </Router>,
   document.getElementById('root')
