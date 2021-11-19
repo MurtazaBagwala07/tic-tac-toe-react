@@ -26,7 +26,10 @@ function App() {
   const clearGame=()=>{
     updateGameState(initialState);
   }
-
+  const clearScore=()=>{
+    updatePOneScore(0);
+    updatePTwoScore(0);
+  }
   useEffect(()=>{
     let winner = checkWinner();
     if (winner) {
@@ -87,7 +90,8 @@ function App() {
       <SquareComponent state={gameState[8]} onClick={()=>onSquareClicked(8)}/>
       </div>
 
-      <button className="clear-button" onClick={clearGame}>Reset</button>
+      <button className="clear-button" onClick={clearGame}>Reset Current Game</button>
+      <button className="clear-score-button" onClick={clearScore}>Reset Scores</button>
 
     </div>
   );
