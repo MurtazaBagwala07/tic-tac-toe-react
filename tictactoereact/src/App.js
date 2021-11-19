@@ -40,6 +40,10 @@ function App() {
         clearGame();
         alert(`Ta da ! ${winner} won the Game !`)
     }
+    else if(winner===null&&!gameState.includes("")){
+      updateGameState(initialState)
+      alert("Game DRAW!!!")
+    }
   },[gameState])
 
   const checkWinner = () => {
