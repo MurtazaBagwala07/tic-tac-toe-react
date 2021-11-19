@@ -10,6 +10,7 @@ ReactDOM.render(
   <Router>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/play" element={<App/>}/>
     </Routes>
   </Router>,
   document.getElementById('root')

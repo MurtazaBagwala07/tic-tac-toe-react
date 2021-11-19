@@ -12,6 +12,30 @@ code {
     monospace;
 }
 
+.home-wrapper {
+  background-color: #131A28;
+  width: 100%;
+  height: 47rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 20rem;
+  height:2rem;
+  margin:2rem;
+  color:#131A28;
+  outline:none
+}
+
+.play-btn{
+  color: #131A28;
+  height: 3rem;
+  width: 10rem;
+}
+
 .app-header {
   display: flex;
   min-height: 100vh;

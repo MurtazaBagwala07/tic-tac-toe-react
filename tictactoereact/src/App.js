@@ -1,12 +1,17 @@
+import {BrowserRouter as Router,Routes,Route,Link,useParams} from 'react-router-dom';
 import React,{useState,useEffect} from 'react'
 import SquareComponent from './SquareComponent';
 const initialState = ["","","","","","","","",""]
+
 
 function App() {
   const [gameState,updateGameState] =useState(initialState);
   const [xTurn,updateXTurn] =useState(false)
   const [pOneScore,updatePOneScore]=useState(0);
   const [pTwoScore,updatePTwoScore] = useState(0);
+
+
+  
   
 
   const onSquareClicked=(index)=>{
@@ -60,9 +65,8 @@ function App() {
 
   return (
     <div className="app-header">
-      <p className="heading-text">React Tic Tac Toe</p>
-    <span>Player 1</span><span>{pOneScore}</span><br/>
-    <span>Player 2</span><span>{pTwoScore}</span><br/>
+    <span>One</span><span>{pOneScore}</span><br/>
+    <span>Two</span><span>{pTwoScore}</span><br/>
       <div className="row jc-center">
         <SquareComponent className="b-bottom-right" state={gameState[0]} onClick={()=>onSquareClicked(0)}/>
         <SquareComponent className="b-bottom-right" state={gameState[1]} onClick={()=>onSquareClicked(1)}/>
